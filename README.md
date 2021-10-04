@@ -1,2 +1,2 @@
 # Robot-Karol
- programs written in Robot Karol
+ Programs written in Robot Karol.
