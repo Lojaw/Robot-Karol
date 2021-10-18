@@ -1,4 +1,4 @@
-//Mitte der Welt finden und markieren.
+//Die Mitte einer beliebigen Welt finden und markieren.
 //Es werden noch alle Ecken markiert.
 
 Anweisung solangeNichtIstWand
@@ -37,8 +37,8 @@ Anweisung nachNordenDrehen
     *solange
 *Anweisung
 
-Anweisung nachSüdenDrehen
-    solange nicht IstSüden tue
+Anweisung nachSÃ¼denDrehen
+    solange nicht IstSÃ¼den tue
         LinksDrehen
     *solange
 *Anweisung
@@ -71,7 +71,7 @@ Anweisung mitteFinden
         *wenn
         
         wenn IstMarke dann
-            MarkeLöschen
+            MarkeLÃ¶schen
             LinksDrehen
             LinksDrehen
             Schritt
@@ -93,17 +93,17 @@ Anweisung waagerechtMitteFinden
       MitteFinden
 *Anweisung
 
-Anweisung überprüfeDieBlickrichtung
+Anweisung Ã¼berprÃ¼feDieBlickrichtung
 
     wenn IstNorden dann
-        MarkeLöschen
+        MarkeLÃ¶schen
         wenden
         Schritt
         LinksDrehen
         Schritt
         waagerechtMitteFinden
     wenn IstOsten dann
-        MarkeLöschen
+        MarkeLÃ¶schen
         wenden
         Schritt
     *wenn
@@ -111,8 +111,8 @@ Anweisung überprüfeDieBlickrichtung
       Beenden
     *wenn
     
-    wenn IstSüden dann
-        MarkeLöschen
+    wenn IstSÃ¼den dann
+        MarkeLÃ¶schen
         wenden
     wenn nicht IstWand dann
         Schritt
@@ -121,7 +121,7 @@ Anweisung überprüfeDieBlickrichtung
       waagerechtMitteFinden
       
     wenn IstOsten dann
-        MarkeLöschen
+        MarkeLÃ¶schen
         wenden
         Schritt
         LinksDrehen
@@ -141,12 +141,12 @@ Anweisung überprüfeDieBlickrichtung
         
         MarkeSetzen
     *wenn sonst
-      MarkeLöschen
+      MarkeLÃ¶schen
       wenden
       Schritt
-      MarkeLöschen
+      MarkeLÃ¶schen
       waagerechtMitteFinden
-      MarkeLöschen
+      MarkeLÃ¶schen
       wenden
       Schritt
     wenn nicht IstWesten dann
@@ -161,6 +161,6 @@ Programm
     geheZurStartPosition
     eckenMarkieren
     mitteFinden
-    überprüfeDieBlickrichtung
+    Ã¼berprÃ¼feDieBlickrichtung
     zweiEckenMarkieren
 *Programm
