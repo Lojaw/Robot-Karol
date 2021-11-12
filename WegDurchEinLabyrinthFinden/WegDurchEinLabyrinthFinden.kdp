@@ -1,0 +1,111 @@
+//Beschreibung:
+//Karol sucht sich einen Weg durch ein
+//Labyrinth. Wichtig ist, dass der Ausgang
+//oben rechts in der Ecke ist.
+
+//Weltgroesse: egal
+
+Anweisung geheZurStartPosition
+    wiederhole solange nicht IstWesten
+        linksDrehen
+    *wiederhole
+      wiederhole solange nicht IstWand
+          schritt
+      *wiederhole
+        linksDrehen
+*Anweisung
+
+Anweisung sucheEingang
+    wiederhole solange IstZiegel
+        linksDrehen
+        wenn IstWand dann
+            beenden sonst
+              schritt
+        *wenn
+        rechtsDrehen
+    *wiederhole
+    schritt
+*Anweisung
+
+Bedingung hatEndeErreicht
+    falsch
+    wiederhole solange nicht IstNorden
+        linksDrehen
+    *wiederhole
+        wenn IstWand dann
+            rechtsDrehen
+            wenn IstWand dann
+                wahr
+                rechtsDrehen
+            *wenn
+        *wenn
+*Bedingung
+
+Bedingung hatWandOstenErreicht
+    falsch
+    wenn IstOsten dann
+        wenn IstWand dann
+            wahr
+        *wenn
+    *wenn
+*Bedingung
+
+Anweisung nachOstenGehen
+    wenn nicht IstWand dann
+        wiederhole solange nicht IstOsten
+            linksDrehen
+        *wiederhole
+            wenn IstZiegel dann
+                wiederhole solange IstZiegel
+                    rechtsDrehen
+                *wiederhole
+            *wenn
+    *wenn
+    wenn nicht IstWand dann
+        schritt
+    *wenn
+    
+    wenn nicht hatWandOstenErreicht dann
+        wenn IstWand dann
+        linksDrehen
+        wenn IstZiegel dann
+            rechtsDrehen
+            rechtsDrehen
+            schritt
+        *wenn
+        schritt
+    *wenn
+    *wenn
+*Anweisung
+
+Anweisung nachNordenGehen
+    wenn nicht IstWand dann
+        wiederhole solange nicht IstNorden
+            linksDrehen
+        *wiederhole
+        wenn IstZiegel dann
+            linksDrehen
+            wenn nicht IstZiegel dann
+                wenn nicht IstWand dann
+                    schritt
+                *wenn
+            *wenn
+        *wenn
+    *wenn
+*Anweisung
+
+Anweisung geheDurchsLabyrinth
+    wiederhole solange nicht hatWandOstenErreicht
+        nachOstenGehen
+    *wiederhole
+    
+    wiederhole solange nicht hatEndeErreicht
+        nachNordenGehen
+    *wiederhole
+*Anweisung
+
+Programm
+geheZurStartPosition
+sucheEingang
+geheDurchsLabyrinth
+*Programm
