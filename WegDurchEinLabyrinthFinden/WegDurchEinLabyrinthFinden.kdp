@@ -1,6 +1,6 @@
 //Beschreibung:
-//Karol sucht sich einen Weg durch ein Labyrinth.
-//Wichtig ist, dass der Ausgang
+//Karol sucht sich einen Weg durch ein
+//Labyrinth. Wichtig ist, dass der Ausgang
 //oben rechts in der Ecke ist.
 
 //Weltgroesse: egal
@@ -64,7 +64,7 @@ Anweisung nachOstenGehen
     wenn nicht IstWand dann
         schritt
     *wenn
-    
+
     wenn nicht hatWandOstenErreicht dann
         wenn IstWand dann
         linksDrehen
@@ -90,6 +90,25 @@ Anweisung nachNordenGehen
                     schritt
                 *wenn
             *wenn
+            wenn IstZiegel dann
+                rechtsDrehen
+                rechtsDrehen
+            *wenn
+        *wenn
+        wenn nicht IstWand dann
+            schritt
+        *wenn
+
+        wenn IstWand dann
+            wiederhole solange nicht IstOsten
+                rechtsDrehen
+                wenn nicht IstWand dann
+                    wenn nicht IstZiegel dann
+                        schritt
+                    *wenn
+
+                *wenn
+            *wiederhole
         *wenn
     *wenn
 *Anweisung
@@ -98,7 +117,7 @@ Anweisung geheDurchsLabyrinth
     wiederhole solange nicht hatWandOstenErreicht
         nachOstenGehen
     *wiederhole
-    
+
     wiederhole solange nicht hatEndeErreicht
         nachNordenGehen
     *wiederhole
